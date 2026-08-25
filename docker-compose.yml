@@ -1,0 +1,38 @@
+services:
+  neo4j:
+    image: neo4j:5
+    container_name: graph-benchmark-neo4j
+    restart: unless-stopped
+
+    cpus: "0.5"
+    mem_limit: 512m
+
+    ports:
+      - "7474:7474"
+      - "7688:7687"
+
+    environment:
+      NEO4J_AUTH: "${NEO4J_USERNAME}/${NEO4J_PASSWORD}"
+      NEO4J_server_memory_heap_initial__size: "256m"
+      NEO4J_server_memory_heap_max__size: "256m"
+
+    volumes:
+      - neo4j_data:/data
+
+  falkordb:
+    image: falkordb/falkordb:latest
+    container_name: graph-benchmark-falkordb
+    restart: unless-stopped
+
+    cpus: "0.5"
+    mem_limit: 512m
+
+    ports:
+      - "6379:6379"
+
+    volumes:
+      - falkordb_data:/data
+
+volumes:
+  neo4j_data:
+  falkordb_data:
