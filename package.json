@@ -1,0 +1,22 @@
+{
+  "name": "graph-db-benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "arangojs": "^10.4.0",
+    "chart.js": "^4.5.1",
+    "chartjs-node-canvas": "^5.0.0",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^17.4.2",
+    "falkordb": "^6.7.0",
+    "gremlin": "^3.7.3",
+    "neo4j-driver": "^6.2.0"
+  }
+}
